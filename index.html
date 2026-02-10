@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Afra Osama | Architect &amp; Interior Designer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eead2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221c10",
+                        "neutral-soft": "#e5e3df",
+                        "neutral-text": "#3d3831",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 20s linear infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+        }
+
+        .letter-spacing-widest {
+            letter-spacing: 0.3em;
+        }
+
+        .letter-spacing-wide {
+            letter-spacing: 0.1em;
+        }
+
+        /* Masonry Grid */
+        .masonry-grid {
+            columns: 1;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Timeline */
+        .timeline-border {
+            border-left: 1px solid rgba(238, 173, 43, 0.3);
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-6 md:px-16 transition-all duration-300 bg-transparent"
+        id="main-nav">
+        <div class="text-xl font-bold tracking-tighter uppercase text-white mix-blend-difference">
+            AO<span class="text-primary">.</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="text-sm font-medium uppercase tracking-widest text-white hover:text-primary transition-colors"
+                href="#home">Home</a>
+            <a class="text-sm font-medium uppercase tracking-widest text-white hover:text-primary transition-colors"
+                href="#about">About</a>
+            <a class="text-sm font-medium uppercase tracking-widest text-white hover:text-primary transition-colors"
+                href="#projects">Work</a>
+            <a class="text-sm font-medium uppercase tracking-widest text-white hover:text-primary transition-colors"
+                href="#experience">Experience</a>
+            <a class="text-sm font-medium uppercase tracking-widest text-white hover:text-primary transition-colors border-b border-primary/40 pb-1"
+                href="#contact">Contact</a>
+        </div>
+        <button class="md:hidden text-white">
+            <span class="material-icons">menu</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="home">
+        <div class="absolute inset-0 z-0">
+            <img alt="Modern architectural interior" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqhBd4MSG8bwG_uuCm_3_VW1kTN0g-k7g2MhTG9vp3PvRlY39y-R8sKJpYBqHX6R-273FGEOpWbnSNOOBCFsHq__lZDyqO2hVGWakmaKhXfuB2tWm_LXfRh_icMEH4rpTxLs23W4grzFsIOx46X7AVY6ZS67f_np1cI0wiUIL4JHK4h-9dzFg4MD-1b1t7A7J6MvOHvFOhRjauoknJTk1GnXGJGTmfuGvw3A9AIVceWJrslhR8A_zyJvVe9sBGBXeOhU7t4HIR50w" />
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-extralight text-white uppercase tracking-[0.2em] mb-4">
+                Afra Osama
+            </h1>
+            <p class="text-sm md:text-lg text-primary uppercase letter-spacing-widest font-light mb-12">
+                Architect &amp; Interior Designer
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a class="bg-primary text-background-dark px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 rounded"
+                    href="#projects">
+                    View Portfolio
+                </a>
+                <a class="border border-white/30 text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-background-dark transition-all duration-300 rounded backdrop-blur-sm"
+                    href="#contact">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+            <div class="w-[1px] h-16 bg-gradient-to-b from-primary to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-24 md:py-32 bg-background-light dark:bg-background-dark overflow-hidden" id="about">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-primary/40 z-0"></div>
+                    <div class="relative z-10 aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
+                        <img alt="Professional portrait of Afra Osama"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcfBVfAk1BvfXznYstNV3FaBVc0Sx2f1-myFeRf8z7p2nuJHtLGbnSwG4K8s18USxTjQnR6KsRxAwI6oyZG7whJ6TliD_gJR9S5Nr_ZsEnIfAm-gw2bjXNBGmZyOeYz5JIMLGpvyYwTTkUaUZ1tNzn9hqfAOhM6ic7JtfX7O_25_21_axnXgvZTRTsypqhWjBWVnbpvdrvnlQg2TM7dBAwpYxg3vaUXOCodHm1-tCtF4AOLKUwUlfYhf3ra2QozZ8JENDbAAkSqAM" />
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -right-8 p-8 bg-primary/10 backdrop-blur-md border border-primary/20 rounded-xl hidden md:block">
+                        <p class="text-primary font-bold text-4xl leading-none">12+</p>
+                        <p class="text-[10px] uppercase tracking-widest font-semibold mt-1">Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-primary">
+                            <span class="w-12 h-[1px] bg-primary"></span>
+                            <span class="text-xs font-bold uppercase tracking-[0.3em]">The Vision</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-light leading-tight">
+                            Merging <span class="text-primary font-medium italic">structural</span> integrity with <span
+                                class="text-primary font-medium italic">aesthetic</span> soul.
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                        <p class="text-lg">
+                            Based in the intersection of functionality and art, Afra Osama approaches every project as a
+                            unique architectural narrative. With over a decade of experience in residential and
+                            commercial spaces, she has developed a signature style characterized by clean lines, natural
+                            textures, and a masterly play of light.
+                        </p>
+                        <p>
+                            Her philosophy is rooted in the belief that a well-designed space is not just seen, but
+                            felt. From the initial conceptual sketch to the final interior detail, Afra ensures that
+                            every element serves a purpose while contributing to an atmosphere of timeless
+                            sophistication.
+                        </p>
+                    </div>
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+                        <div>
+                            <p class="text-xs text-primary uppercase tracking-widest font-bold mb-2">Specialty</p>
+                            <p class="text-sm font-medium">Modern Minimalism</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-primary uppercase tracking-widest font-bold mb-2">Location</p>
+                            <p class="text-sm font-medium">Saudi Arabia</p>
+                        </div>
+                        <div class="col-span-2 md:col-span-1">
+                            <p class="text-xs text-primary uppercase tracking-widest font-bold mb-2">Recognition</p>
+                            <p class="text-sm font-medium">Design Excellence Award '23</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorative Strip -->
+    <div
+        class="w-full h-24 bg-primary/5 flex items-center overflow-hidden whitespace-nowrap border-y border-primary/10">
+        <div class="animate-marquee flex gap-16 items-center">
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Sustainable Architecture</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Luxury Interior Design</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Spatial Planning</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Urban Development</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Sustainable Architecture</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Luxury Interior Design</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Sustainable Architecture</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Luxury Interior Design</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Spatial Planning</span>
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-light uppercase tracking-[0.5em] text-gray-400">Urban Development</span>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section class="py-24 md:py-32 bg-background-light dark:bg-background-dark" id="projects">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 text-center">
+                <h2 class="text-5xl md:text-7xl font-light tracking-tight mb-6">Selected <span
+                        class="font-extrabold">Works</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="max-w-2xl mx-auto text-zinc-500 dark:text-zinc-400 leading-relaxed text-lg">
+                    A curation of architectural excellence spanning residential developments, sacred spaces, and luxury
+                    classic villas.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-primary text-primary"
+                    data-filter="all">All Projects</button>
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    data-filter="residential">Residential</button>
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    data-filter="classic">Classic Villas</button>
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    data-filter="interior">Interior Design</button>
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    data-filter="commercial">Commercial</button>
+                <button
+                    class="filter-btn px-6 py-2 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    data-filter="mosque">Mosques</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="masonry-grid" id="projects-grid">
+                <!-- Residential Projects -->
+                <div class="masonry-item project-item" data-category="residential">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Villa Riyadh" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-008-022.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Residential</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Modern Villa</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">place</i>
+                                    Riyadh, KSA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="residential">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Apartment Design" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-006-015.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Residential</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Residential Complex</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">place</i>
+                                    Khartoum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="residential">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Exterior View" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-016-046.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Residential</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Villa Exterior</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">architecture</i>
+                                    Exterior Concept</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior Design Projects -->
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Modern Majlis" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-009-025.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Contemporary Majlis</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">place</i>
+                                    Abha</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Kitchen Detail" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-014-039.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Gourmet Kitchen</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">architecture</i>
+                                    Technical Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Living Space" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-012-036.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Luxury Apartment</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">place</i>
+                                    Cairo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Bedroom Design" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-010-026.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Master Suite</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial/Commercial Projects -->
+                <div class="masonry-item project-item" data-category="commercial">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Showroom" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-015-044.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Commercial</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Furniture Showroom</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">place</i>
+                                    Abha</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mosques Projects -->
+                <div class="masonry-item project-item" data-category="mosque">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Modern Mosque" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-007-017.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Mosque</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Modern Mosque</h3>
+                            <div class="flex items-center gap-4 text-white/90 text-xs">
+                                <span class="flex items-center gap-1"><i class="material-icons text-sm">architecture</i>
+                                    Islamic Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="mosque">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Mosque Site Plan" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-007-018.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Mosque</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Mosque Site Study</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classic Villas -->
+                <div class="masonry-item project-item" data-category="classic">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Classic Villa" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-020-058.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Classic
+                                Villa</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Royal Classic Residence</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="classic">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Classic Entrance" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-020-059.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Classic
+                                Villa</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Majestic Entrance</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical/Plan Section -->
+                <div class="masonry-item project-item" data-category="residential">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Architectural Plan"
+                            class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-022-065.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Technical</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Engineering Blueprint</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Interiors -->
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Living Detail" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-017-048.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Grand Living Hall</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item project-item" data-category="interior">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Interior Concept" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-010-027.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Interior</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Lighting Design</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Residential -->
+                <div class="masonry-item project-item" data-category="residential">
+                    <div class="project-card group relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 rounded-sm">
+                        <img alt="Roof Garden" class="w-full h-auto object-cover transition-transform duration-700"
+                            src="images/img-008-020.png" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-primary/90 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-2">Residential</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Luxury Roof Garden</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Section -->
+            <div class="mt-20 text-center">
+                <button
+                    class="group relative px-12 py-4 overflow-hidden border border-zinc-300 dark:border-zinc-700 rounded-sm">
+                    <span
+                        class="relative z-10 text-sm font-bold uppercase tracking-widest group-hover:text-white transition-colors duration-300">Explore
+                        All Projects</span>
+                    <div
+                        class="absolute inset-0 bg-primary transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Skills Section -->
+    <section class="py-24 md:py-32 bg-background-light dark:bg-background-dark border-t border-primary/5"
+        id="experience">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Experience Column -->
+                <section>
+                    <div class="flex items-center gap-4 mb-12">
+                        <span class="text-xs uppercase tracking-widest text-primary font-bold">01</span>
+                        <h2 class="text-2xl font-semibold">Professional Experience</h2>
+                    </div>
+                    <div class="space-y-12 timeline-border ml-2 pl-8 relative">
+                        <!-- Experience Item 1 -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold">Senior Interior Designer</h3>
+                                <span class="text-primary text-sm font-medium">2021 — Present</span>
+                            </div>
+                            <p class="text-stone-600 dark:text-stone-400 font-medium mb-3">Sky T Engineering</p>
+                            <ul class="space-y-2 text-stone-500 dark:text-stone-400 font-light text-sm leading-relaxed">
+                                <li class="flex gap-2"><span>•</span> Leading large-scale commercial interior projects
+                                    from concept to execution.</li>
+                                <li class="flex gap-2"><span>•</span> Managing cross-functional teams and coordinating
+                                    with site engineers.</li>
+                                <li class="flex gap-2"><span>•</span> Integrating smart building technologies into
+                                    modern architectural plans.</li>
+                            </ul>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary/40 border-4 border-background-light dark:border-background-dark">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold">Architectural Designer</h3>
+                                <span class="text-primary text-sm font-medium">2019 — 2021</span>
+                            </div>
+                            <p class="text-stone-600 dark:text-stone-400 font-medium mb-3">Freelance Projects</p>
+                            <ul class="space-y-2 text-stone-500 dark:text-stone-400 font-light text-sm leading-relaxed">
+                                <li class="flex gap-2"><span>•</span> Designed high-end residential villas with a focus
+                                    on sustainable materials.</li>
+                                <li class="flex gap-2"><span>•</span> Delivered full construction documentation sets and
+                                    3D visualizations.</li>
+                            </ul>
+                        </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-stone-300 dark:bg-stone-700 border-4 border-background-light dark:border-background-dark">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                <h3 class="text-xl font-bold">Junior Architect</h3>
+                                <span class="text-primary text-sm font-medium">2017 — 2019</span>
+                            </div>
+                            <p class="text-stone-600 dark:text-stone-400 font-medium mb-3">FAD Design</p>
+                            <ul class="space-y-2 text-stone-500 dark:text-stone-400 font-light text-sm leading-relaxed">
+                                <li class="flex gap-2"><span>•</span> Assisted in schematic design and site analysis for
+                                    urban developments.</li>
+                                <li class="flex gap-2"><span>•</span> Produced detailed AutoCAD drawings and Revit
+                                    models for permit approval.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Education & Skills Column -->
+                <section class="space-y-16">
+                    <div>
+                        <div class="flex items-center gap-4 mb-12">
+                            <span class="text-xs uppercase tracking-widest text-primary font-bold">02</span>
+                            <h2 class="text-2xl font-semibold">Education</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div
+                                class="p-6 border border-stone-200 dark:border-stone-800 rounded-lg hover:border-primary/50 transition-colors">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg">Master of Interior Architecture</h3>
+                                    <span
+                                        class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">2017</span>
+                                </div>
+                                <p class="text-stone-500 dark:text-stone-400 text-sm italic">University of Arts &amp;
+                                    Design</p>
+                            </div>
+                            <div
+                                class="p-6 border border-stone-200 dark:border-stone-800 rounded-lg hover:border-primary/50 transition-colors">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg">Bachelor in Architecture</h3>
+                                    <span
+                                        class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">2015</span>
+                                </div>
+                                <p class="text-stone-500 dark:text-stone-400 text-sm italic">Polytechnic Institute of
+                                    Technology</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="text-xs uppercase tracking-widest text-primary font-bold">03</span>
+                            <h2 class="text-2xl font-semibold">Technical Stack</h2>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div
+                                class="flex flex-col items-center p-4 border border-stone-200 dark:border-stone-800 rounded grayscale hover:grayscale-0 transition-all">
+                                <span class="material-icons text-primary mb-2">architecture</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">AutoCAD</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-4 border border-stone-200 dark:border-stone-800 rounded grayscale hover:grayscale-0 transition-all">
+                                <span class="material-icons text-primary mb-2">apartment</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">Revit</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-4 border border-stone-200 dark:border-stone-800 rounded grayscale hover:grayscale-0 transition-all">
+                                <span class="material-icons text-primary mb-2">view_in_ar</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">SketchUp</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-4 border border-stone-200 dark:border-stone-800 rounded grayscale hover:grayscale-0 transition-all">
+                                <span class="material-icons text-primary mb-2">wb_sunny</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">V-Ray</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 lg:py-40 bg-background-light dark:bg-background-dark border-t border-primary/5" id="contact">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                <div class="space-y-8">
+                    <span class="text-primary font-semibold tracking-widest uppercase text-sm block">Contact</span>
+                    <h2
+                        class="text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-neutral-text dark:text-white">
+                        Let’s build <br />
+                        <span class="text-primary italic font-light">something beautiful</span> <br />
+                        together.
+                    </h2>
+                    <p
+                        class="text-lg lg:text-xl text-neutral-text/70 dark:text-gray-400 max-w-md font-light leading-relaxed">
+                        Have a project in mind or just want to say hello? I'm always open to discussing new design
+                        opportunities and collaborations.
+                    </p>
+                    <div class="pt-6">
+                        <a class="inline-flex items-center gap-4 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded transition-all duration-300 group"
+                            href="mailto:Afraosama414@gmail.com">
+                            <span class="font-bold tracking-wide">GET IN TOUCH</span>
+                            <span
+                                class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="p-8 border border-primary/20 bg-white/50 dark:bg-white/5 rounded-xl">
+                        <span class="material-icons text-primary mb-6">email</span>
+                        <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-2">Email Me</h3>
+                        <a class="text-lg font-medium hover:text-primary transition-colors break-all"
+                            href="mailto:Afraosama414@gmail.com">Afraosama414@gmail.com</a>
+                    </div>
+                    <div class="p-8 border border-primary/20 bg-white/50 dark:bg-white/5 rounded-xl">
+                        <span class="material-icons text-primary mb-6">location_on</span>
+                        <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-2">Location</h3>
+                        <p class="text-lg font-medium">Saudi Arabia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary flex items-center justify-center font-bold text-white rounded-sm">A</div>
+                <h2
+                    class="text-2xl font-extrabold tracking-tighter text-neutral-text dark:text-white uppercase transition-all duration-300">
+                    Afra <span class="font-light">Osama</span></h2>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500">© 2024 Afra Osama Architecture. All Rights
+                Reserved.</p>
+            <div class="flex gap-8">
+                <a class="text-gray-400 hover:text-primary transition-colors text-xl" href="#"><i
+                        class="material-icons">camera_alt</i></a>
+                <a class="text-gray-400 hover:text-primary transition-colors text-xl" href="#"><i
+                        class="material-icons">business</i></a>
+                <a class="text-gray-400 hover:text-primary transition-colors text-xl" href="#"><i
+                        class="material-icons">mail</i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navigation background change on scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-background-light', 'dark:bg-background-dark', 'shadow-md', 'py-4');
+                nav.classList.remove('bg-transparent', 'py-6');
+            } else {
+                nav.classList.remove('bg-background-light', 'dark:bg-background-dark', 'shadow-md', 'py-4');
+                nav.classList.add('bg-transparent', 'py-6');
+            }
+        });
+
+        // Project Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                filterBtns.forEach(b => {
+                    b.classList.remove('border-primary', 'text-primary');
+                    b.classList.add('border-transparent', 'text-zinc-400');
+                });
+
+                // Add active class to clicked button
+                btn.classList.add('border-primary', 'text-primary');
+                btn.classList.remove('border-transparent', 'text-zinc-400');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
